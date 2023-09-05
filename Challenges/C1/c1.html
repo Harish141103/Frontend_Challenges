@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor Challenge | QR code component</title>
+
+  <style>
+    /* .attribution { font-size: 11px; text-align: center; } */
+    /* .attribution a { color: hsl(228, 45%, 44%); } */
+@font-face{
+  font-family:outfit;
+  src:url('./Outfit/Outfit-VariableFont_wght.ttf');
+}
+:root{
+--white: hsl(0, 0%, 100%);
+--lightgray: hsl(212, 45%, 89%);
+}
+body{
+  background-color:var(--lightgray);
+}
+.layout{
+  display:flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+flex-direction: column;
+}
+.qrcon{
+  width:80vw;
+font-family:outfit;
+font-weight: 400;
+text-align: center;
+border-radius: 1em;
+background-color: var(--white);
+line-height:1.7em;
+}
+.qrcon img{
+  justify-self: center;
+  width:90%;
+  border-radius: 0.5em;
+margin: 15px 15px 0px 15px;
+}
+.qrcon .para{margin:0px 25px 0px 25px;}
+ .para1{
+  font-weight:700;font-size: 1.3em;
+ }
+ .para2{
+  line-height:1.3em;font-size: .9em;margin-bottom: 20px;
+ }
+
+
+ @media(min-width:375px){
+ 
+.layout{
+  display:grid;
+justify-content: center;
+align-items: center;
+height: 100vh;
+width: 100vw;
+}   
+.qrcon{
+width:300px;
+}
+.qrcon img{
+  justify-self: center;
+  border-radius: 0.5em;
+margin: 15px 15px 0px 15px;
+}
+  }
+  </style>
+</head>
+<body>
+  <div class="layout">
+<div class="qrcon">
+  <div class="image"><img src="./images/image-qr-code.png" alt="qrcode"></div>  
+  <div class="para" >
+    <p class="para1" >Improve your front-end skills by building projects</p>
+    <p class="para2" >Scan the QR code to visit Frontend Mentor and take your coding skills to the next level</p>
+  </div>  
+</div>
+</div>
+  <div class="box"></div>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <title>Frontend Mentor | Results summary component</title>
+  <style>
+  :root{
+    /* ### Primary */
+    --lightred: hsl(0, 100%, 67%);
+    --orangeyyellow: hsl(39, 100%, 56%);
+    --Greenteal: hsl(166, 100%, 37%);
+    --Cobaltblue: hsl(235, 41%, 63%);
+    /* value background */
+    --vlightred: hsl(0, 100%, 97%);
+    --vorangeyyellow: hsl(38, 100%, 93%);
+    --vGreenteal: hsl(165, 100%, 95%);
+    --vCobaltblue: hsl(234, 100%, 96%);
+    /* ## Gradients */
+    --Lightslateblue_background: hsl(252, 88%, 56%);
+    --Lightroyalblue_background: hsl(241, 81%, 54%);
+    --Violetblue_circle: rgb(85, 41, 206);
+    --Persianblue_circle: hsla(240, 69%, 6%, .2);
+    /* ### Neutral */
+    --White: hsl(0, 0%, 100%);
+    --Paleblue: hsl(221, 100%, 96%);
+    --Lightlavender: hsl(241, 90%, 81%);
+    --Darkgrayblue: hsl(224, 30%, 27%);
+    }
+    @font-face{
+        font-family:hanken;
+        src:url(./assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+    }
+    body{margin:0;font-family: hanken;}
+    .layout{
+    width:100vw;
+    height:100vh;
+    min-width: 220px;
+    }
+    .container{
+        display:flex;
+        flex-direction: column;   
+    }
+    .container1{
+        position:relative;
+        top:-1.9em;
+        background-color: var(--Lightroyalblue_background);
+        border-radius: 30px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    height:45vh;
+    font-size: 12px;
+    color: var(--White);
+    padding-bottom: 1.5em;
+    }
+    p{font-size: 12px;font-weight:bolder;}
+    .title1{
+        margin-top: 3em;
+        font-size: 1.1em;
+        font-weight: bolder;
+        color: var(--Lightlavender);
+    }
+    .round1{
+        width:8.5em;
+        height:8.5em;
+        border-radius: 50%;
+        background:linear-gradient(to bottom,var(--Persianblue_circle),var(--Lightroyalblue_background));
+        /* background-color: var(--Persianblue_circle); */
+        display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin:1em auto 1.5em auto;
+    }
+    .round1 p:nth-child(1){
+        font-size: 3.5em;
+        margin:0;
+        margin-top: .5em;
+    }
+    
+    .round1 p:nth-child(2){
+        font-size: .9em;
+        margin:0;
+        margin-top: .1em;
+        color:var(--Lightlavender)
+    }
+    
+    .result{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+       
+    }
+    .result p:nth-child(1){
+        font-size: 1.3em;
+        margin:0;
+        margin-bottom: .4em;
+    }
+    .result p:nth-child(2){
+        font-size: 1em;
+        margin:0;
+        width:18em;
+        text-align: center;    
+        color:var(--Lightlavender)
+    }
+    .container2{
+        margin-top: -.5em;
+        padding:0em 1.5em 1.5em 1.5em;
+        display:flex;
+        flex-direction: column;
+    }
+    .title2{font-weight: bolder;}
+    .value_container{
+        display:flex;
+        flex-direction: column;
+    }
+    .value{
+        display:flex;
+        flex-direction: row;
+    margin-top:.3em;
+    margin-bottom:.3em ;
+    /* padding:0em .5em 0em .4em; */
+    padding:.2em;
+    border-radius: .4em;
+    
+    }
+    .value p:nth-child(1){
+    flex:1;
+    padding-top: .4em;
+    /* padding-left:1em; */
+    }    
+    .value_container div:nth-child(1){margin-top:1em;color:var(--lightred);background-color: var(--vlightred);}
+    .value_container div:nth-child(2){color:var(--orangeyyellow);background-color: var(--vorangeyyellow);}
+    .value_container div:nth-child(3){color:var(--Greenteal);background-color: var(--vGreenteal);}
+    .value_container div:nth-child(4){color:var(--Cobaltblue);background-color: var(--vCobaltblue);}
+    
+    .value_container div p{margin:.5em;}
+    .value_container div p:nth-child(2){color:black;
+        padding-top: .4em;
+        /* width:4em;margin:auto 0 auto 0;text-align:end; */
+    }
+    span{color:var(--Lightlavender)}
+    button{
+        background-color: var(--Darkgrayblue);
+        color:var(--White);
+        padding:1em;
+        border:0px ;
+        border-radius:2em;
+        margin-top: 1em;
+    }
+    .val_img{
+        display:flex;
+        justify-content: flex-start;
+    gap: .8em;
+    }
+    @media(min-width:475px){
+        
+        .layout{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: none;
+    }
+    .container{
+        background-color: var(--Paleblue);
+            display:flex;
+            flex-direction: row;
+            min-width:45vw; 
+            min-height: 45vh;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items:stretch;
+            background-color: var(--White);
+     box-shadow:10px 10px 10px 5px var(--Paleblue);
+     border-radius: 2em;
+        }
+        .container1{
+            top:0;
+            background-color: var(--Lightslateblue_background);
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        color: var(--White);
+        padding:2em;
+    flex:1;    
+    font-size:.65em;
+    height: auto;
+    }
+        p{font-size:.9em;}
+        .title1{
+            margin-top: 0;
+            font-size: 1.7em;
+            font-weight: bolder;
+           
+        }
+        .round1{
+            width:16em;
+            height:16em;
+            background:linear-gradient(to bottom,var(--Persianblue_circle),var(--Lightslateblue_background));
+            /* background-color: var(--Persianblue_circle); */
+            display:flex;
+        flex-direction: column;
+        align-items: center;
+        margin:2.5em auto 2em auto;
+        }
+        .round1 p:nth-child(1){
+            font-size: 5em;
+            margin:0;
+            margin-top: .6em;
+        }
+        
+        .round1 p:nth-child(2){
+            font-size: 1.4em;
+        }
+        
+        .result p:nth-child(1){
+            font-size: 2.5em;
+            margin:0;
+            margin-bottom: .5em;
+        }
+        .result p:nth-child(2){
+            font-size: 1.5em;
+            margin:0;
+            width:14em;
+        }
+        .container2{
+            margin:0;
+            padding:1.5em 1.5em;
+            display:flex;
+            flex-direction: column;
+        flex:1;
+    }
+        .title2{margin-bottom:.6em;font-size:1.2em;}
+        
+        .value{
+            display:flex;
+            flex-direction: row;
+        margin-top:.4em;
+        margin-bottom:.4em ;
+        /* padding:0em .5em 0em .4em; */
+        padding:.1em;
+        border-radius: .4em;
+        }
+       button{
+            margin-top: 2em;
+            margin-bottom: 1em;
+            font-size: 1em;
+            letter-spacing: 1px;
+        }
+        button:hover{
+            background-color: var(--Lightslateblue_background);
+        }
+      
+    }
+    .attribution{padding:1em;height:10vh;background-color: black; font-size: 1.3em;text-align: center;color: gold; }
+    .attribution a { color: hsl(0, 0%, 100%); }
+    .attribution a:hover{color:black;background-color: gold;}
+    
+  </style>
+</head>
+<body>
+<div class="layout">
+<div class="container">
+<div class="container1">
+  <div class="title1">Your Result</div> 
+      <div class="round1">
+        <p>76</p> 
+        <p>of 100</p>
+      </div>
+      <div class="result">
+      <p>Great</p>
+      <p>You scored higher than 65% of the people who have taken these tests.</p>
+    </div> 
+</div>
+<div class="container2">  
+  <div class="title2">Summary</div>
+  <div class="value_container">
+  <div class="value">
+    <p class="val_img"><img src="./assets/images/icon-reaction.svg"> Reaction</p>
+    <p>80 <span>/ 100</span></p>
+  </div>
+  <div class="value">
+    <p class="val_img"><img src="./assets/images/icon-memory.svg"> Memory</p>
+    <p>92 <span>/ 100</span></p>
+  </div>
+  <div class="value">
+    <p class="val_img"><img src="./assets/images/icon-verbal.svg">Verbal</p>
+    <p> 61 <span>/ 100</span></p>
+  </div>
+  <div class="value">
+    <p class="val_img"><img src="./assets/images/icon-visual.svg"> Visual</p>
+    <p> 72<span>/ 100</span></p>
+  </div>
+  <button>Continue</button>
+</div>
+</div>
+</div>
+</div>
+  <div class="attribution">
+    <div class="content">
+      <p>Coded by <a href="https://www.linkedin.com/in/harishmurugan1411/">Harish M</a></p>
+      <p>Challenge by <a href="https://www.frontendmentor.io/profile/Harish141103" target="_blank">Frontend Mentor</a> </p>
+  </div>
+  </div>
+</body>
+</html>
